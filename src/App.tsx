@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { type ChangeEvent, useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css'
@@ -7,7 +7,7 @@ function App() {
   const [count, setCount] = useState(0)
   const [inputVal, setInputVal] = useState('')
 
-  function changeInput(e){
+  function changeInput(e: ChangeEvent<HTMLInputElement>){
     setInputVal(e.target.value);
   };
 

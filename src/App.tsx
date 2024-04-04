@@ -5,7 +5,16 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [inputVal, setInputVal] = useState('')
 
+  function changeInput(e){
+    setInputVal(e.target.value);
+  };
+
+  function clearButton(){
+	setInputVal('')
+  }
+  
   return (
     <>
       <div>
@@ -15,6 +24,9 @@ function App() {
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a> */}
+		<input type="text" value={inputVal} onChange={changeInput}/>
+		<button onClick={clearButton}>button</button>
+		<span>{inputVal}</span>
       </div>
       <h1>Vite + React</h1>
       <div className="card">

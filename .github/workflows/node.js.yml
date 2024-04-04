@@ -31,4 +31,4 @@ jobs:
           yarn
 
       - name: Testing
-      - run: yarn test
+        run: yarn test

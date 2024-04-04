@@ -1,20 +1,9 @@
-import type { ChangeEvent } from "react";
 import { useState } from "react";
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
   const [inputVal, setInputVal] = useState("");
-
-  const clickHandler = ({ target }: ChangeEvent<HTMLInputElement>) => {
-    setInputVal(target.value);
-  };
-
-  function clearButton() {
-    setInputVal("");
-  }
 
   return (
     <>
@@ -25,8 +14,12 @@ function App() {
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a> */}
-        <input type="text" value={inputVal} onChange={clickHandler} />
-        <button onClick={clearButton}>button</button>
+        <input
+          type="text"
+          value={inputVal}
+          onChange={({ target }) => setInputVal(target.value)}
+        />
+        <button onClick={() => setInputVal("")}>button</button>
         <span>{inputVal}</span>
       </div>
       <h1>Vite + React</h1>
